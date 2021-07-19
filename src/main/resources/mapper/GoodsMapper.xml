@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.GoodsMapper">
+    <select id="viewGoods" resultType="goods">
+		SELECT * FROM goods
+	</select>
+	<select id="viewGoodsByKey" resultType="goods">
+		SELECT * FROM goods where gKey=#{gKey}
+	</select>
+	<select id="viewGoodsById" resultType="goods">
+		SELECT * FROM goods where gId=#{gId}
+	</select>
+
+	<delete id="deleteGoods" >
+		DELETE FROM goods where gId=#{gId}
+	</delete>
+	<insert id="save" >
+		insert into goods(gId,gName,gPrice,gPriceVip,gKey,gText) values (#{gId},#{gName},#{gPrice},#{gPriceVip},#{gKey},#{gText})
+	</insert>
+	<update id="change">
+		update goods set gName=#{gName},gPrice=#{gPrice},gPriceVip=#{gPriceVip},gKey=#{gKey},gText=#{gText} where gid=#{gId}
+	</update>
+
+
+</mapper>

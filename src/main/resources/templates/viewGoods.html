@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>小食の店</title>
+    <style >
+        p{
+            font-size: 35px;
+            font-family:华文新魏;
+            color: #C68463;
+            padding: 20px 200px;
+
+        }
+        p1{
+            font-size: 30px;
+            font-family:隶书;
+            color: #D8D0D0;
+
+        }
+        p2{
+            font-size: 20px;
+            font-family:宋体;
+            color: #D8D0D0;
+
+        }
+        .px{
+            font-size:30px;
+            font-family: 黑体;
+            padding-bottom: 50%;
+            padding-left: 55%;
+
+        }
+
+        *{
+            padding:0;
+            margin: 0;
+        }
+
+
+        html,body{
+            margin: 0;
+            padding:0;
+            height: 100%;
+            background:#C6AAAC;
+            background-size:50%;
+        }
+        #container{
+            min-height: 100%;
+            height: auto !important;
+            height: 100%;
+            position: relative;
+        }
+
+
+        /********************header***********************/
+        .header{
+            width:100%;
+            height:80px;
+            background-color: #9C453B;
+            position: fixed;
+        }
+        .headr{
+            float: right;
+            font-size: 18px;
+            font-family:宋体;
+            color: #D8D0D0;
+            padding: 15px 2px;
+
+        }
+        /********************menu***********************/
+        ul{
+            text-decoration: none;
+            display:block;
+            float:left;
+            list-style: none;
+        }
+
+        .sidebar{
+            position: fixed;
+            top: 80px;
+            left: 0;
+            height: 100%;
+            width: 120px;
+            z-index: 10001;
+            background: #96524a;
+
+        }
+        li a{
+            text-decoration: none;
+            font-family:隶书;
+            color:#D8D0D0;
+            font-size:22px;
+            line-height: 1.5;
+            display: block;
+
+
+        }
+
+        .nav>li{
+            width:120px;
+            height:auto;
+            position:relative;
+            margin: 68px auto 0;
+            text-align:center;
+        }
+        .nav>li>a:hover{
+            background-color: #c06263;
+        }
+
+        /********************wrap***********************/
+        .wrap {
+            min-height: 100%;
+            max-width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .main{
+            display: block;
+            height: 180px;
+            width: 100%;
+            margin-left: 123px;
+            margin-top: 83px;
+
+        }
+
+        .footer{
+            width: 100%;
+            height: 82px;
+            background-color:#BB6566;
+            position: absolute;
+            clear: both;
+            bottom: 0px;
+            padding-left: 700px;
+
+        }
+    </style>
+
+
+
+</head>
+<body>
+<div id="container">
+    <div class="header">
+        <p>小食の店 <p1><strong>|</strong>❀查看商品❀</p1><a class=headr href=login.html >[登录]</a><a class=headr href="gwc.html">购物车  </a><a class=headr href="grxx.html">个人信息  </a></p>
+
+
+    </div>
+    <div class="sidebar">
+        <ul class="nav">
+            <li><a href="viewGoodsByKey?gKey=饮料" >饮料</a></li>
+            <li><a href="viewGoodsByKey?gKey=食品">食品</a></li>
+            <li><a href="viewGoodsByKey?gKey=坚果类">坚果类</a></li>
+            <li><a href="viewGoodsByKey?gKey=酒类">酒类</a></li>
+            <li><a href="viewGoods">全部</a></li>
+
+        </ul>
+    </div>
+    <div class="wrap">
+        <div class="main">
+            <table >
+                <tr>
+                    <th>商品名</th>
+                    <th>单价</th>
+                    <th>会员价</th>
+                    <th>商品描述</th>
+                    <th>商品类别</th>
+
+                <tr  th:each="goods,goodsStat : ${goods}" >
+                    <td th:text="${goods.gName}">111</td>
+                    <td th:text="${goods.gPrice}">222</td>
+                    <th th:text="${goods.gPriceVip}">333</th>
+                    <th th:text="${goods.gText}">444</th>
+                    <th th:text="${goods.gKey}">555</th>
+                    <th ><a th:href="@{deleteGoods?(gId=${goods.gId})}">删除</a></th>
+                    <th ><a th:href="@{changeGoods?(gId=${goods.gId})}">更改</a></th>
+                </tr>
+            </table>
+            <a href="addGoods">增加商品</a>
+        </div>
+
+
+    </div>
+    <div class="footer">
+        <p2>关于我们 <strong>|</strong>联系客服</p2>
+    </div>
+
+</div>
+
+
+
+
+</body>
+</html>
