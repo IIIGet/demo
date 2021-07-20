@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <title>欢迎来到小食店，请您登录</title>
+    
+    <link  rel="stylesheet" href="/css/login.css" th:href="@{/css/login.css}" />
+</head>
+<body>
+    <header>
+
+    </header>
+    <section>
+        <!-- 背景颜色 -->
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="box">
+            <!-- 背景圆 -->
+            <div class="circle" style="--x:0" id="circle1"></div>
+            <div class="circle" style="--x:1"></div>
+            <div class="circle" style="--x:2"></div>
+            <div class="circle" style="--x:3"></div>
+            <div class="circle" style="--x:4"></div>
+            <!-- 登录框 -->
+            <div class="container" id="div1">
+                <div class="form">
+                    <div class="choose-pattern" id="choose-pattern1">
+                        <input id="用户名登录" type="button" value="用户名登录" onclick="yhmdl()">
+                    </div>
+                    <div class="choose-pattern" id="choose-pattern2">
+                        <input id="手机号登录" type="button" value="手机号登录" onclick="sjhdl()">
+                    </div>
+                    <form>
+                        <div class="inputBox" id="yhm">
+                            <div class="dlText">用户名：</div>
+                            <input type="text" placeholder="请输入用户名" class="shurukuang">
+                        </div>
+                        <div class="inputBox" id="yhmm">
+                            <div class="dlText">密&nbsp&nbsp&nbsp码：</div>
+                            <input type="password" placeholder="请输入密码" class="shurukuang">
+                        </div>
+                        <div class="inputBox" id="yzm">
+                            <div class="dlText">验证码：</div>
+                            <input type="text" placeholder="请输入验证码" class="shurukuang">
+                            <br>
+                            <div class="showtext" id="yzmk">
+                                <canvas id="canvas" width="150px" height="50px"></canvas>
+                                <p>点击图片可更换验证码数字</p>
+                            </div>
+                        </div>
+                        <div class="inputBox" id="sjh">
+                            <div class="dlText">手机号：</div>
+                            <input type="text"  placeholder="请输入手机号" class="shurukuang">
+                        </div>
+                        <div class="inputBox" id="sjyzm">
+                            <div class="dlText">验证码：</div>
+                            <input type="password"  placeholder="请输入手机验证码" class="shurukuang">
+                        </div>
+                        <div class="inputBox buttonBox">
+                            <input type="submit" value="登录">
+                        </div>
+                        <div class="inputBox buttonBox">
+                            <input type="reset" value="清空">
+                        </div>
+                        <p class="forget">忘记密码?<a href="forget.html">
+                                立刻找回
+                            </a></p>
+                        <p class="forget">没有账号?<a href="register.html">
+                                注册用户
+                            </a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+
+    </footer>
+</body>
+</html>
+<script src="/JS/login.js"></script>
