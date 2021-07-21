@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>支付成功</title>
+    <style>
+        /* 父容器的定位通常是relative，子元素是absolute */
+
+        /* 清除默认样式 */
+        *{
+            padding:0;
+            margin: 0;
+        }
+        p{
+            font-size: 35px;
+            font-family:华文新魏;
+            color: #C68463;
+            padding: 20px 200px;
+        }
+        p1{
+            font-size: 10px;
+            font-family:宋体;
+            color: #D8D0D0;
+            padding: 30px 650px;
+        }
+        p3{
+            font-size: 40px;
+            font-family:隶书;
+            color: #C68463;
+
+        }
+        .box1{
+            width:1200px;
+            height: 100px;
+            background-color:#FDEFE4;
+            padding-left: 0px;
+            padding-top: 10px;
+            padding-right: 10px;
+            border:3px solid #D8D0D0;
+
+        }
+        .box2{
+            width:1200px;
+            height: 300px;
+            background-color:#FDEFE4;
+            padding-left: 0px;
+            padding-top: 110px;
+            padding-right: 10px;
+            border:3px solid #D8D0D0;
+        }
+        .box3{
+            width:1200px;
+            height: 100px;
+            background-color:#FDEFE4;
+            padding-left: 0px;
+            padding-top: 0px;
+            padding-right: 10px;
+            border:3px solid #D8D0D0;
+        }
+        .outer > li{ /* 直接子元素 */
+            list-style: none;
+            height: 35px;
+            width: 100%;
+            text-align: center;/* 水平居中 */
+            line-height: 50px;
+            font-size: 35px;
+            font-family:隶书;
+            color: #C68463;
+        }
+        a{
+            text-decoration:none;
+            color: #9C453B;
+        }
+        .wrapper{
+            width:100%;
+            height:800px;
+        }
+        .header{
+            width:100%;
+            height:80px;
+            background-color: #9C453B;
+        }
+        .main{
+            width: 100%;
+            height:640px;
+            position: relative;
+        }
+        .left{
+            width:10%;
+            height:100%;/* 相对父容器 */
+            background-color: #C6AAAC;
+        }
+        .right{
+            width:10%;
+            height:100%;/* 相对父容器 */
+            background-color: #C6AAAC;
+            float: right;
+            padding-top: 0px;
+        }
+        .content{
+            width: 80%;
+            height: 100%;
+            background-color: #7F3B3F;
+            position: absolute;
+            top: 0px;
+            left: 10%;
+
+        }
+        .footer{
+            width: 100%;
+            height: 80px;
+            background-color:#BB6566;
+        }
+    </style>
+</head>
+<body>
+<!-- 没有语义标签 -->
+<div class="wrapper">
+    <div class="header">
+        <p>小食の店 </p>
+    </div>
+    <div class="main">
+        <div class="right">
+
+        </div>
+        <div class="left">
+
+        </div>
+        <div class="content">
+            <div class="box1">
+                <ul class="outer">
+                    <li></li>
+                    <li>您已成功付款</li>
+                </ul>
+            </div>
+            <div class="box2">
+                <ul class="outer">
+
+                    <li> <tr th:each="order : ${order}"><!--循环语句，条件为users列表长度-->
+                        收货地址：<p3 th:text="${order.address1}"></p3><br>
+                        <p3 th:text="${order.username}"></p3>
+                        <p3 th:text="${order.phonenumber}"></p3><br>
+                        实付款：￥<p3 th:text="${order.gPrice}"></p3>
+                    </tr>
+                    </li>
+                    <li></li>
+                    <li>
+
+                    </li>
+                    <li></li>
+                    <li>
+                        您可以   <a href="#">查看已购买的商品   </a><a href="#">查看交易的详情</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="box3">
+                <ul class="outer">
+
+                    <li>请在离店前检查您的食物是否有数量或质量问题。欢迎下次光临！</li>
+                    <li>从此刻起，享受食物带来的纯粹乐趣</li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="footer">
+        <p1>仅支持支付宝 <strong>|</strong> 联系我们</p1>
+    </div>
+</div>
+</body>
+</html>

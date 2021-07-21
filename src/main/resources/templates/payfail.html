@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>抱歉哦，支付失败啦</title>
+    <style>
+        /* 父容器的定位通常是relative，子元素是absolute */
+
+        /* 清除默认样式 */
+        *{
+            padding:0;
+            margin: 0;
+        }
+        p{
+            font-size: 35px;
+            font-family:华文新魏;
+            color: #C68463;
+            padding: 20px 200px;
+        }
+        p1{
+            font-size: 10px;
+            font-family:宋体;
+            color: #D8D0D0;
+            padding: 30px 650px;
+        }
+        .box1{
+            width:1200px;
+            height: 100px;
+            background-color:#FDEFE4;
+            padding-left: 0px;
+            padding-top: 10px;
+            padding-right: 10px;
+            border:3px solid #D8D0D0;
+
+        }
+        .box2{
+            width:1200px;
+            height: 300px;
+            background-color:#FDEFE4;
+            padding-left: 0px;
+            padding-top: 110px;
+            padding-right: 10px;
+            border:3px solid #D8D0D0;
+        }
+        .box3{
+            width:1200px;
+            height: 100px;
+            background-color:#FDEFE4;
+            padding-left: 0px;
+            padding-top: 0px;
+            padding-right: 10px;
+            border:3px solid #D8D0D0;
+        }
+        .outer > li{ /* 直接子元素 */
+            list-style: none;
+            height: 35px;
+            width: 100%;
+            text-align: center;/* 水平居中 */
+            line-height: 50px;
+            font-size: 35px;
+            font-family:隶书;
+            color: #C68463;
+        }
+        a{
+            text-decoration:none;
+            color: #9C453B;
+        }
+        .wrapper{
+            width:100%;
+            height:800px;
+        }
+        .header{
+            width:100%;
+            height:80px;
+            background-color: #9C453B;
+        }
+        .main{
+            width: 100%;
+            height:640px;
+            position: relative;
+        }
+        .left{
+            width:10%;
+            height:100%;/* 相对父容器 */
+            background-color: #C6AAAC;
+        }
+        .right{
+            width:10%;
+            height:100%;/* 相对父容器 */
+            background-color: #C6AAAC;
+            float: right;
+            padding-top: 0px;
+        }
+        .content{
+            width: 80%;
+            height: 100%;
+            background-color: #7F3B3F;
+            position: absolute;
+            top: 0px;
+            left: 10%;
+        }
+        .footer{
+            width: 100%;
+            height: 80px;
+            background-color:#BB6566;
+        }
+    </style>
+</head>
+<body>
+<!-- 没有语义标签 -->
+<div class="wrapper">
+    <div class="header">
+        <p>小食の店 </p>
+    </div>
+    <div class="main">
+        <div class="right">
+
+        </div>
+        <div class="left">
+
+        </div>
+        <div class="content">
+            <div class="box1">
+                <ul class="outer">
+                    <li></li>
+                    <li>支付失败了哦，试试点击重新支付，或者返回首页</li>
+                </ul>
+            </div>
+            <div class="box2">
+                <ul class="outer">
+                    <li></li>
+                    <li>
+                        您可以   <a th:href="@{userList}" >重新支付   </a><a href="#">返回首页</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="box3">
+                <ul class="outer">
+                    <li></li>
+                    <li>这次没有满意的，下次一定会有的，生活总是充满乐趣，不是吗</li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="footer">
+        <p1>仅支持支付宝 <strong>|</strong> 联系我们</p1>
+    </div>
+</div>
+</body>
+</html>
