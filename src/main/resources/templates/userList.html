@@ -1,44 +1,187 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"/>
-    <title>用户列表</title>
-    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
+    <meta charset="UTF-8">
+    <title>收银台</title>
+
+
+    <script src="http://cdn.staticfile.org/jquery/3.6.0/jquery.js"></script>
+    <link rel="stylesheet" href="./css/main.css">
+    <style>
+        *{
+            padding:0;
+            margin: 0;
+        }
+        p{
+            font-size: 35px;
+            font-family:华文新魏;
+            color: #C68463;
+            padding: 20px 200px;
+        }
+        p1{
+            font-size: 30px;
+            font-family:隶书;
+            color: #D8D0D0;
+        }
+        p2{
+            font-size: 10px;
+            font-family:宋体;
+            color: #D8D0D0;
+            padding: 30px 650px;
+        }
+
+        #d1{
+            width:1215px;
+            height:100px;
+            float:left;
+            background:#C6AAAC;
+        }
+        #d1 p3{
+            font-size: 20px;
+            font-family:黑体;
+            color: darkslategrey;
+
+            padding-top: 10px;
+            padding-left: 10px;
+        }
+        .header{
+            width:100%;
+            height:80px;
+            background-color: #9C453B;
+
+        }
+        .main{
+            width: 100%;
+            height:640px;
+            position: relative;
+        }
+        .content{
+            width: 80%;
+            height: 100%;
+            background-color: #7F3B3F;
+            position: absolute;
+            top: 0px;
+            left: 10%;
+            right: 10%;
+        }
+        .box1{
+            width:250px;
+            height: 250px;
+            background-color:#C6AAAC;
+            padding-left: 435px;
+            padding-top: 10px;
+            clear: left;/* 清除左侧浮动：box3的左侧不允许有浮动元素 */
+        }
+        .box2{
+            width:1193px;
+            height: 30px;
+            background-color:#7F3B3F;
+            padding: 10px;
+            clear: left;/* 清除左侧浮动：box3的左侧不允许有浮动元素 */
+        }
+        .box3{
+            width:1193px;
+            height: 300px;
+            background-color:#C6AAAC;
+            padding: 10px;
+            clear: left;/* 清除左侧浮动：box3的左侧不允许有浮动元素 */
+        }
+        .box4{
+            height: 1px;
+            background-color:#7F3B3F;
+            padding-left: 490px;
+            padding-top: 50px;
+            clear: left;/* 清除左侧浮动：box3的左侧不允许有浮动元素 */
+        }
+        .box5{
+            height: 10%;
+            background-color:#C6AAAC;
+            padding-right: 50%;
+        }
+        .d2{
+            background:#CE6A56;
+            border:1px;
+            text-decoration:none;
+            display:inline-block;
+            padding:10px 50px;
+            border-radius:25px;
+            cursor:pointer;
+
+        }
+        a.d2 span {
+            font-weight:bold;
+            color:#EBD2D6;
+        }
+        px{
+            font-size:30px;
+            font-family: 黑体;
+            padding-top: 10px;
+        }
+        .footer{
+            width: 100%;
+            height: 100px;
+            background-color:#BB6566;
+        }
+        body{
+            background:url(kele.jpg) top left;
+            background-size:50%;
+        }
+        a.button span { display: none; }
+
+
+    </style>
+
 </head>
-<body class="container">
-<br/>
-<h1>用户列表</h1>
-<br/><br/>
-<div class="with:80%">
+<body>
 
 
-    <table class="table table-hover">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>姓名</th>
-            <th>年龄</th>
-            <th>编辑</th>
-            <th>删除</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="user : ${users}"><!--循环语句，条件为users列表长度-->>
-            <th scope="row" th:text="${user.id}"></th>
-            <td th:text="${user.name}"></td>
-            <td th:text="${user.age}"></td>
-            <td><a th:href="@{/toEdit(id=${user.id})}">编辑</a></td>
-            <td><a th:href="@{/delete(id=${user.id})}">删除</a></td>
-        </tr>
 
-        </tbody>
-    </table>
-</div>
-<div class="form-group">
-    <div class="col-sm-2 control-label">
-        <a href="/toAdd" th:href="@{/toAdd}" class="btn btn-info">增加</a>
+<div class="header">
+    <p>小食の店 <p1><strong>|</strong>❀支付❀</p1></p>
+    <div class="main">
+        <div id="div1">
+        </div>
+        <div class="content">
+            <div id="d1">
+                <div style="border: solid 10px;color:#C6AAAC;width: 300px;height: 50px;padding-top: 30px;padding-left: 50px;">
+
+                    <p3>
+                        <tr th:each="order : ${order}"><!--循环语句，条件为users列表长度-->
+                            <p3 th:text="${order.gName}"></p3>
+                            <p3 th:text="${order.orderNum}"></p3>
+                            <p3>件</p3></tr>
+                    </tr>请即时付款</p3>
+                </div>
+            </div>
+
+
+            <div class="box2">❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀</div>
+            <div class="box3">
+                <div class="box5">
+                    <px class="b">
+                        请使用支付宝扫描二维码 以完成支付
+                    </px>
+                </div>
+                <div class="box1">
+                    <img src="qrs.png"  alt="123" />
+                </div>
+            </div>
+            <div class="box4">
+                <a th:href="@{paysucessful}" class="d2">
+                    <span>支付完成</span>
+                </a>
+            </div>
+            <div class="box4">
+                <a th:href="@{payfail.html}" class="d2">
+                    <span>取消支付</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p2>仅支持支付宝 <strong>|</strong> 联系我们</p2>
     </div>
 </div>
-
 </body>
 </html>
