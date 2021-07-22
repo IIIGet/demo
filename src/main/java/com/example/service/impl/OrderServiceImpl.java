@@ -23,4 +23,11 @@ public class OrderServiceImpl implements OrderService {
     public Order findOrder1() {
         return orderMapper.findOrder1();
     }
+
+    @Override
+    public int updateOrder(Order orders) {
+        return orderMapper.updateOrder(orders);
+    }
+
+
 }

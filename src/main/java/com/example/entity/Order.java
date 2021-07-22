@@ -8,6 +8,7 @@ public class Order {
     private String gName;
     private String username;
     private float gPrice;
+    private float gPriceNow;
     private int orderNum;
     private Timestamp orderTime;
     private String address1;
@@ -84,4 +85,13 @@ public class Order {
     public void setPhonenumber(String phonenumber) {
         this.phonenumber = phonenumber;
     }
+
+    public float getgPriceNow() {
+        return gPriceNow;
+    }
+
+    public void setgPriceNow(float gPriceNow) {
+        this.gPriceNow = gPriceNow;
+    }
 }
+

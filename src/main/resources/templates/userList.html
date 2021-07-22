@@ -144,13 +144,14 @@
         </div>
         <div class="content">
             <div id="d1">
-                <div style="border: solid 10px;color:#C6AAAC;width: 300px;height: 50px;padding-top: 30px;padding-left: 50px;">
+                <div style="border: solid 10px;color:#C6AAAC;width: 510px;height: 50px;padding-top: 30px;padding-left: 50px;">
 
                     <p3>
                         <tr th:each="order : ${order}"><!--循环语句，条件为users列表长度-->
                             <p3 th:text="${order.gName}"></p3>
-                            <p3 th:text="${order.orderNum}"></p3>
-                            <p3>件</p3></tr>
+                            <p3 th:text="${order.orderNum}"></p3>件
+                            <p3 th:text="${order.orderNum*order.gPrice}"></p3>元
+
                     </tr>请即时付款</p3>
                 </div>
             </div>

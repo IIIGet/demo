@@ -8,4 +8,6 @@ public interface OrderService {
 
     List<Order> findOrder();
     Order findOrder1();
+    int updateOrder(Order orders);
+
 }

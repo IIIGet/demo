@@ -10,5 +10,6 @@ public interface OrderMapper {
 
     List<Order> findOrder();
     Order findOrder1();
+    int updateOrder(Order orders);
 
 }
