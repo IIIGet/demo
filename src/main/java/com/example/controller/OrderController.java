@@ -25,7 +25,6 @@ public class OrderController {
     public String index(Model mod) {
         List<Order> list1 = orderService.findOrder();
         mod.addAttribute("order", list1);
-
         return "userList";
     }
 
