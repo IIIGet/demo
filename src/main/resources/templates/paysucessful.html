@@ -145,8 +145,7 @@
                         收货地址：<p3 th:text="${order.address1}"></p3><br>
                         <p3 th:text="${order.username}"></p3>
                         <p3 th:text="${order.phonenumber}"></p3><br>
-                        实付款：￥<p3 th:text="${order.gPrice}"></p3>
-                    </tr>
+                        实付款：￥<p3 th:text="${order.gPrice*order.orderNum}"></p3></tr>
                     </li>
                     <li></li>
                     <li>

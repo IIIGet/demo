@@ -32,12 +32,22 @@ public class OrderController {
     @RequestMapping("/paysucessful")
     public String index1(Model model) {
         Order order = orderService.findOrder1();
-        //List<Order> list = orderService.findOrder();
         model.addAttribute("order", order);
-        System.out.println(order.getgPrice());
+//        int order1 = orderService.updateOrder(order);
+//        model.addAttribute("order", order1);
+        System.out.println(order.getgPrice()*order.getOrderNum());
         return "paysucessful";
 
     }
+
+//    @RequestMapping("/")
+//    public String toEdit( Model model){
+//        Order order= orderService.updateOrder(order);
+//
+//
+//
+//        return "redirect:/";
+//    }
 
 
 

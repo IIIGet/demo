@@ -11,6 +11,7 @@
         <result column="username"  property="username" />
         <result column="phonenumber"  property="phonenumber" />
         <result column="address1"  property="address1" />
+        <result column="gPriceNow" property="gPriceNow" />
     </resultMap>
 
     <sql id="SelectOrder">
@@ -25,5 +26,10 @@
     <select id="findOrder1" resultMap="OrderMap">
         SELECT  gName,orderNum,username,phonenumber,address1,gPrice FROM  orders WHERE userid="1"
     </select>
+
+    <!--插入gPriceNow的数据-->
+    <update id="uodateOrders" parameterType="float">
+        UPDATE orders set gPriceNow=#{gPrice}*#{orderNum} where userid="1"
+    </update>
 
 </mapper>
