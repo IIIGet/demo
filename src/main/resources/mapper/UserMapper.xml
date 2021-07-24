@@ -2,53 +2,87 @@
         <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.dao.UserMapper">
     <resultMap id="BaseResultMap" type="com.example.entity.User">
-        <id column="id" jdbcType="INTEGER" property="id" />
-        <result column="name" jdbcType="VARCHAR" property="name" />
-        <result column="age" jdbcType="INTEGER" property="age" />
+        <id column="userid" jdbcType="INTEGER" property="userid" />
+        <result column="username" jdbcType="VARCHAR" property="username" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
+        <result column="email" jdbcType="VARCHAR" property="email" />
+        <result column="phonenumber" jdbcType="VARCHAR" property="phonenumber" />
+        <result column="address1" jdbcType="VARCHAR" property="address1" />
+        <result column="address2" jdbcType="VARCHAR" property="address2" />
+        <result column="identity" jdbcType="INTEGER" property="identity" />
+        <result column="status" jdbcType="VARCHAR" property="status" />
+        <result column="createTime" jdbcType="TIMESTAMP" property="createTime"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        id, name, age
+        userid, username, password,email,phonenumber,address1,address2,identity,status,createTime
     </sql>
 
     <!-- 插入数据 -->
     <insert id="saveUser" parameterType="com.example.entity.User">
-        insert into USER (id, name, age) values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER})
+        insert into users (userid, username, password,email,phonenumber,address1,address2,identity,status,createTime)
+        values (#{userid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
+                #{email,jdbcType=VARCHAR}, #{phonenumber,jdbcType=VARCHAR}, #{address1,jdbcType=VARCHAR},
+                #{address2,jdbcType=VARCHAR}, #{identity,jdbcType=INTEGER}, #{status,jdbcType=VARCHAR},#{createTime})
     </insert>
 
     <!-- 查询所有数据 -->
     <select id="findByAll" resultMap="BaseResultMap">
-        SELECT  <include refid="Base_Column_List" /> FROM  user
+        SELECT  <include refid="Base_Column_List" /> FROM  users
     </select>
 
     <!-- 根据id删除某个User信息 -->
-    <delete id="deleteUser" parameterType="java.lang.Integer">
-        delete from user
-        where id = #{id,jdbcType=INTEGER}
+    <delete id="deleteUser" parameterType="java.lang.Integer" >
+        delete from users
+        where userid = #{userid,jdbcType=INTEGER}
     </delete>
 
     <!-- 根据id更新User信息 -->
     <update id="updateUser" parameterType="com.example.entity.User">
-        update user
+        update users
         <set>
-            <if test="name != null">
-                name = #{name,jdbcType=VARCHAR},
+            <if test="username != null">
+                username = #{username,jdbcType=VARCHAR},
             </if>
-
-            <if test="age != null">
-                age = #{age,jdbcType=INTEGER},
+            <if test="password != null">
+                password = #{password,jdbcType=VARCHAR},
             </if>
-
+            <if test="email != null">
+                email = #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="phonenumber != null">
+                phonenumber = #{phonenumber,jdbcType=VARCHAR},
+            </if>
+            <if test="address1 != null">
+                address1 = #{address1,jdbcType=VARCHAR},
+            </if>
+            <if test="address2 != null">
+                address2 = #{address2,jdbcType=VARCHAR},
+            </if>
+            <if test="identity != null">
+                identity = #{identity,jdbcType=INTEGER},
+            </if>
+            <if test="status != null">
+                status = #{status,jdbcType=VARCHAR},
+            </if>
         </set>
-        where id = #{id,jdbcType=INTEGER}
+        where userid = #{userid,jdbcType=INTEGER}
     </update>
 
     <!-- 根据id查找User信息 -->
     <select id="findUserById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
-        from user
-        where id = #{Id,jdbcType=INTEGER}
+        from users
+        where userid = #{userid,jdbcType=INTEGER}
+    </select>
+
+<!--    登录-->
+    <select id="loginIn" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from users
+        where username = #{username,jdbcType=INTEGER} AND password = #{password,jdbcType=VARCHAR}
     </select>
 
 

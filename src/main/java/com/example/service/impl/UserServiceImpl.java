@@ -9,7 +9,7 @@ import java.util.List;
 
 
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService,UserMapper {
 
     @Autowired
     private UserMapper userMapper;
@@ -20,8 +20,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findUserById(Integer id) {
-        return userMapper.findUserById(id);
+    public User findUserById(Integer userid) {
+        return userMapper.findUserById(userid);
     }
 
     @Override
@@ -30,12 +30,17 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public int deleteUser(Integer id) {
-        return userMapper.deleteUser(id);
+    public int deleteUser(Integer userid) {
+        return userMapper.deleteUser(userid);
     }
 
     @Override
     public int updateUser(User user) {
         return userMapper.updateUser(user);
+    }
+
+    @Override
+    public User loginIn(String username,String password) {
+        return userMapper.loginIn(username,password);
     }
 }

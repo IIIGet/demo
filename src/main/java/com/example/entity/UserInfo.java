@@ -2,7 +2,12 @@ package com.example.entity;
 
 import java.sql.Timestamp;
 
-public class User {
+/**
+ * @Author LJM
+ * @Date 2021/7/23 9:23
+ * @Version 1.0
+ */
+public class UserInfo {
     private int userid;
     private String username;
     private String password;
@@ -13,6 +18,9 @@ public class User {
     private int identity;
     private String status;
     private Timestamp createTime;
+
+    public static void set(UserInfo user) {
+    }
 
     public int getUserid() {
         return userid;

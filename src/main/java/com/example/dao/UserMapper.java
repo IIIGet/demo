@@ -17,10 +17,10 @@ public interface UserMapper {
     /**
      * 根据id查找User信息
      *
-     * @param id
+     * @param userid
      * @return
      */
-    User findUserById(Integer id);
+    User findUserById(Integer userid);
 
     /**
      * 保存user信息
@@ -33,10 +33,10 @@ public interface UserMapper {
     /**
      * 根据id删除某个user信息
      *
-     * @param id
+     * @param userid
      * @return
      */
-    int deleteUser(Integer id);
+    int deleteUser(Integer userid);
 
     /**
      * 更新user信息
@@ -45,6 +45,15 @@ public interface UserMapper {
      * @return
      */
     int updateUser(User user);
+
+    /**
+     * 登录
+     *
+     * @param username,password
+     * @return
+     */
+    User loginIn(String username,String password);
+
 
 }
 

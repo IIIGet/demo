@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body th:model="*{userLogin}">
+
+login success!
+welcome! <p th:text="*{userLogin.userid}"></p>
+<a href="/toIndex" th:href="@{/toIndex(userid=${userLogin.userid})}" class="btn btn-info">goToIndex</a>
+</body>
+</html>

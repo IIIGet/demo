@@ -10,19 +10,54 @@
 <h1>修改用户</h1>
 <br/><br/>
 <div class="with:80%">
-    <form  class="form-horizontal" th:action="@{/edit}" th:object="${user}" method="post">
-        <input type="hidden" name="id" th:value="*{id}"/>
+    <form  class="form-horizontal" th:action="@{/edit}" th:model="*{user}" method="post">
+<input type="hidden" name="userid" id="userid" th:value="*{user.userid}"/>  <!--type="hidden"-->
         <div class="form-group">
-            <label for="name" class="col-sm-2 control-label">name</label>
+            <label for="username" class="col-sm-2 control-label">用户名</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="name" id="name" th:value="*{name}" placeholder="name"/>
+                <input type="text" class="form-control" name="username" id="username" th:value="*{user.username}"/>
             </div>
         </div>
-
         <div class="form-group">
-            <label for="age" class="col-sm-2 control-label">age</label>
+            <label for="password" class="col-sm-2 control-label">密码</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="age" id="age" th:value="*{age}" placeholder="age"/>
+                <input type="text" class="form-control" name="password" id="password" th:value="*{user.password}"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email" class="col-sm-2 control-label">email</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="email" id="email" th:value="*{user.email}"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="phonenumber" class="col-sm-2 control-label">电话号码</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="phonenumber" id="phonenumber" th:value="*{user.phonenumber}"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="address1" class="col-sm-2 control-label">地址1</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="address1" id="address1" th:value="*{user.address1}"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="address2" class="col-sm-2 control-label">地址2</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="address2" id="address2" th:value="*{user.address2}"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="identity" class="col-sm-2 control-label">identity</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="identity" id="identity" th:value="*{user.identity}"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="status" class="col-sm-2 control-label">status</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="status" id="status" th:value="*{user.status}"/>
             </div>
         </div>
 

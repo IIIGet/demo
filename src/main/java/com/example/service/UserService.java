@@ -8,11 +8,13 @@ public interface UserService {
 
     List<User> findByAll();
 
-    User findUserById(Integer id);
+    User findUserById(Integer userid);
 
     int saveUser(User user);
 
-    int deleteUser(Integer id);
+    int deleteUser(Integer userid);
 
     int updateUser(User user);
+
+    User loginIn(String username,String password);
 }
