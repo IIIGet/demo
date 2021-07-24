@@ -26,7 +26,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public int updateOrder(Order orders) {
-        return orderMapper.updateOrder(orders);
+        return 0;
     }
 
 

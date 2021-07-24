@@ -3,7 +3,7 @@
 <mapper namespace="com.example.dao.OrderMapper">
     <resultMap id="OrderMap" type="com.example.entity.Order">
         <id column="userid" jdbcType="INTEGER" property="userid" />
-        <result column="gId" jdbcType="INTEGER" property="gId" />
+        <result column="gId"  property="gId" />
         <result column="gName" property="gName" />
         <result column="gPrice"  property="gPrice" />
         <result column="orderNum" jdbcType="INTEGER" property="orderNum" />
@@ -20,11 +20,11 @@
 
     <!-- 查询所有数据 -->
     <select id="findOrder" resultMap="OrderMap">
-        SELECT  gName,orderNum,username,phonenumber,address1,gPrice FROM  orders WHERE userid="1"
+        SELECT  userid,gId,gName,orderNum,username,phonenumber,address1,gPrice FROM  orders WHERE userid="1"
     </select>
 
     <select id="findOrder1" resultMap="OrderMap">
-        SELECT  gName,orderNum,username,phonenumber,address1,gPrice FROM  orders WHERE userid="1"
+        SELECT  userid,gId,gName,orderNum,username,phonenumber,address1,gPrice FROM  orders WHERE userid="1"
     </select>
 
     <!--插入gPriceNow的数据-->
