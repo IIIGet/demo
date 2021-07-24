@@ -11,8 +11,7 @@ public class Order {
     private float gPriceNow;
     private int orderNum;
     private Timestamp orderTime;
-    private String address1;
-    private String phonenumber;
+
 
     public int getUserid() {
         return userid;
@@ -70,21 +69,6 @@ public class Order {
         this.username = username;
     }
 
-    public String getAddress1() {
-        return address1;
-    }
-
-    public void setAddress1(String address1) {
-        this.address1 = address1;
-    }
-
-    public String getPhonenumber() {
-        return phonenumber;
-    }
-
-    public void setPhonenumber(String phonenumber) {
-        this.phonenumber = phonenumber;
-    }
 
     public float getgPriceNow() {
         return gPriceNow;

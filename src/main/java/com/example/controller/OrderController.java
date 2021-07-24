@@ -27,41 +27,4 @@ public class OrderController {
         mod.addAttribute("order", order);
         return "userList";
     }
-
-
-
-    @RequestMapping("/paysucessful")
-    public String index1(Model model) {
-        Order order = orderService.findOrder1();
-        model.addAttribute("order", order);
-        System.out.println(order.getgPrice()*order.getOrderNum());
-        return "paysucessful";
-
-    }
-
-//    @RequestMapping("/")
-//    public String toEdit( Model model){
-//        Order order= orderService.updateOrder(order);
-//
-//
-//
-//        return "redirect:/";
-//    }
-
-
-
-
-    //默认访问list页面
-    /*@RequestMapping("/")
-    public String list2(Model mod) {
-        return "findOrder";
-    }*/
-   /* @RequestMapping("/userList")
-    public String list(Model mod){
-        List<Order> list1 = orderService.findOrder();
-        mod.addAttribute("orders", list1);
-        return "redirect:/";
-    }*/
-
-
 }

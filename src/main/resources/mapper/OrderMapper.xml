@@ -9,8 +9,6 @@
         <result column="orderNum" jdbcType="INTEGER" property="orderNum" />
         <result column="orderTime"  property="orderTime" />
         <result column="username"  property="username" />
-        <result column="phonenumber"  property="phonenumber" />
-        <result column="address1"  property="address1" />
         <result column="gPriceNow" property="gPriceNow" />
     </resultMap>
 
@@ -20,11 +18,11 @@
 
     <!-- 查询所有数据 -->
     <select id="findOrder" resultMap="OrderMap">
-        SELECT  userid,gId,gName,orderNum,username,phonenumber,address1,gPrice FROM  orders WHERE userid="1"
+        SELECT  userid,gId,gName,orderNum,username,gPrice FROM  orders WHERE userid="1"
     </select>
 
     <select id="findOrder1" resultMap="OrderMap">
-        SELECT  userid,gId,gName,orderNum,username,phonenumber,address1,gPrice FROM  orders WHERE userid="1"
+        SELECT  userid,gId,gName,orderNum,username,gPrice FROM  orders WHERE userid="1"
     </select>
 
     <!--插入gPriceNow的数据-->
