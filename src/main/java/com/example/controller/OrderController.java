@@ -23,18 +23,17 @@ public class OrderController {
     //查询所有order数据
     @RequestMapping("/userList")
     public String index(Model mod) {
-        List<Order> list1 = orderService.findOrder();
-        mod.addAttribute("order", list1);
+        Order order = orderService.findOrder1();
+        mod.addAttribute("order", order);
         return "userList";
     }
+
 
 
     @RequestMapping("/paysucessful")
     public String index1(Model model) {
         Order order = orderService.findOrder1();
         model.addAttribute("order", order);
-//        int order1 = orderService.updateOrder(order);
-//        model.addAttribute("order", order1);
         System.out.println(order.getgPrice()*order.getOrderNum());
         return "paysucessful";
 

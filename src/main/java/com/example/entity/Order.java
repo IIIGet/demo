@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 public class Order {
     private int userid;
-    private String gId;
+    private int gId;
     private String gName;
     private String username;
     private float gPrice;
@@ -22,11 +22,11 @@ public class Order {
         this.userid = userid;
     }
 
-    public String getgId() {
+    public int getgId() {
         return gId;
     }
 
-    public void setgId(String gId) {
+    public void setgId(int gId) {
         this.gId = gId;
     }
 
