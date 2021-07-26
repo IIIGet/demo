@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.ShopCartMapper">
+    <resultMap id="shopCart" type="com.example.entity.ShopCart">
+        <result property="userId" column="userId"/>
+        <result property="gId" column="gId"/>
+        <result property="orderNum" column="orderNum"/>
+    </resultMap>
+
+    <update id="upShop" parameterType="string">
+        update shopcart
+        set orderNum=#{number}
+        where gId=2 and userId=5
+    </update>
+
+    <insert id="insertShop" parameterType="integer">
+        insert into shopcart (userId,gId,orderNum) values
+        (5,#{gId},0)
+    </insert>
+
+    <select id="getOrderNum" resultMap="shopCart">
+        select orderNum from shopcart where gId=2 and userId=5
+    </select>
+</mapper>

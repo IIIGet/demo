@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.GoodsDetailMapper">
+    <resultMap id="Goods" type="com.example.entity.GoodsDetail">
+        <result property="gName" column="gName"/>
+        <result property="gPrice" column="gPrice"/>
+        <result property="gPriceVip" column="gPriceVip"/>
+    </resultMap>
+    <resultMap id="order" type="com.example.entity.GoodsDetail">
+        <result property="gName" column="gName"/>
+        <result property="gPrice" column="gPrice"/>
+        <result property="gPriceVip" column="gPriceVip"/>
+        <result property="gText" column="gText"/>
+    </resultMap>
+    <select id="getAll" resultMap="Goods">
+        select gId,gName,gPrice,gPriceVip from goods where gId=2
+    </select>
+    <select id="order" resultMap="order">
+        select goods.gId,gName,gPrice,gPriceVip,orderNum from goods,shopcart where shopcart.gId=goods.gId and userId=5;
+    </select>
+</mapper>

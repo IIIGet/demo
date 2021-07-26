@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.OrderMapper">
+    <resultMap id="Order" type="com.example.entity.Order">
+        <result property="userid" column="userid"/>
+        <result property="username" column="username"/>
+        <result property="gId" column="gId"/>
+        <result property="gName" column="gName"/>
+        <result property="gPrice" column="gPrice"/>
+        <result property="orderNum" column="orderNum"/>
+    </resultMap>
+
+    <insert id="insertOrder" parameterType="com.example.entity.Order">
+        insert into orders (userid,username,gId,gName,gPrice,orderNum) values
+              (#{userid},#{username},#{gId},#{gName}, #{gPrice},#{orderNum})
+    </insert>
+
+</mapper>
