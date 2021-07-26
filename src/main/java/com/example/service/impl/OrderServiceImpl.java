@@ -14,20 +14,17 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private OrderMapper orderMapper;
 
-    @Override
-    public List<Order> findOrder() {
-        return orderMapper.findOrder();
-    }
+
 
     @Override
     public Order findOrder1() {
+        System.out.println("222");
         return orderMapper.findOrder1();
     }
 
     @Override
-    public int updateOrder(Order orders) {
-        return 0;
+    public List<Order> findOrder() {
+        System.out.println("333");
+        return orderMapper.findOrder();
     }
-
-
 }

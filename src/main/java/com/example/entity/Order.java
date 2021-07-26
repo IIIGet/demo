@@ -10,8 +10,8 @@ public class Order {
     private float gPrice;
     private float gPriceNow;
     private int orderNum;
+    private int orderId;
     private Timestamp orderTime;
-
 
     public int getUserid() {
         return userid;
@@ -69,6 +69,13 @@ public class Order {
         this.username = username;
     }
 
+    public int getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
+    }
 
     public float getgPriceNow() {
         return gPriceNow;
