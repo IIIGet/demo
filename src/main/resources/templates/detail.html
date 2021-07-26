@@ -9,61 +9,9 @@
     <title>商品</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <link th:href="@{/css/detail.css}" rel="stylesheet" type="text/css">
+    <script type="text/javascript" th:src="@{/js/detail.js}"></script>
 </head>
-<style>
-    * {
-        padding: 0;
-        margin: 0;
-    }
-
-    a {
-        text-decoration: none;
-        color: black;
-    }
-
-    p {
-        font-family: 楷体;
-    }
-
-    .wrapper {
-        top: -120px;
-        width: 1280px;
-        margin: 120px auto;
-        background-color: white;
-        position: relative;
-    }
-
-    .top {
-        margin-top: -10px;
-        width: 100%;
-        height: 50px;
-        background-color: #BB6566;
-        position: relative;
-        font-size: large;
-        font-family: 楷体;
-    }
-
-    .top li {
-        list-style: none;
-        float: left;
-        line-height: 50px;
-        margin: 5px;
-    }
-
-    .tf {
-        position: absolute;
-        width: 50%;
-        left: 50px;
-        flex: none;
-    }
-
-    .tr {
-        position: absolute;
-        width: 50%;
-        left: 950px;
-    }
-</style>
-
 <body>
 <div class="wrapper">
     <div class="top">
@@ -81,153 +29,12 @@
             <li><a href="#">商家支持</a></li>
         </ul>
     </div>
-    <style>
-        .content {
-            position: relative;
-            background-color: #C68463;
-            width: 100%;
-            height: 600px;
-            margin-top: -50px;
-        }
 
-        .logo {
-            margin: 50px;
-            width: 31%;
-            border: black solid 1px;
-        }
-
-        .descr {
-            position: absolute;
-            left: 630px;
-            top: 0;
-            margin-top: 30px;
-        }
-
-        .descr p {
-            font-size: xx-large;
-            font-family: 宋体;
-        }
-
-        h3 {
-            border-bottom: 2px solid gainsboro;
-            font-size: xx-large;
-        }
-
-        .price {
-            margin-top: 5px;
-            width: 500px;
-            height: 80px;
-            border: gainsboro solid 1px;
-            background-color: gainsboro;
-        }
-
-        .add {
-            width: 220px;
-            height: 70px;
-            background-color: #F26A12;
-            font-size: xx-large;
-            font-family: 楷体;
-            position: absolute;
-            top: 500px;
-        }
-
-        .add a {
-            color: white;
-        }
-
-        .buy {
-            width: 220px;
-            height: 70px;
-            background-color: white;
-            font-size: xx-large;
-            font-family: 楷体;
-            position: absolute;
-            top: 500px;
-            left: 290px;
-        }
-
-        .buy a {
-            color: #F26A12;
-            border: oldlace;
-        }
-
-        .number {
-            width: 90px;
-            height: 30px;
-        }
-
-        .number_info {
-            margin-top: 65px;
-            margin-bottom: 12px;
-            margin-right: 20px;
-            padding: 10px 0;
-            position: relative;
-            width: 510px;
-        }
-
-        .number_info > dt {
-            font-family: "Microsoft YaHei UI", serif;
-            font-weight: normal;
-            color: #999;
-            font-size: 12px;
-            text-align: left;
-            float: left;
-            width: 69px;
-            margin-left: 8px;
-            height: 31px;
-            line-height: 31px;
-        }
-
-        .number_info > dd {
-            height: 31px;
-            line-height: 31px;
-        }
-
-        .number_info > dd > input {
-            padding: 3px 2px 0 2px;
-            font-size: 12px;
-            font-family: Arial, serif;
-            border: 1px solid #a7a6ac;
-            width: 36px;
-            height: 26px;
-            color: #666;
-            display: inline-block;
-            float: left;
-            margin-right: 5px;
-            outline: none;
-        }
-
-        .amount_btn {
-            float: left;
-            display: inline-block;
-            width: 18px;
-        }
-
-        .amount_btn > img {
-            cursor: pointer;
-            float: left;
-        }
-
-        .amount_btn > img + img {
-            margin-top: 3px;
-        }
-
-        .amount_unit {
-            font-family: "Microsoft YaHei UI", serif;
-            font-weight: normal;
-            color: #999;
-            font-size: 12px;
-            text-align: left;
-            float: left;
-            margin-left: 10px;
-        }
-    </style>
     <div class="content">
         <div class="logo">
             <img src="kele.jpg" width="396px" height="400px">
         </div>
         <div class="descr">
-
             <tr th:each="goods : ${GoodsDetail}">
                 <h3>
                     <td th:text="${goods.gName}">2020欧洲杯意大利主场球衣</td>
@@ -240,27 +47,24 @@
                     <td th:utext="${goods.gPriceVip}"> 419</td>
                     </P>
                 </div>
-                <dl class="number_info">
-                    <dt>数量</dt>
+                <div class="number_info">
+                    <dt>请选择想要购买的数量</dt>
                     <form action="pNumber" method="post">
-                    <dd>
-                        <input type="number" name="buyNumber" th:value="*{buyNumber}" maxlength="100" title="请输入购买量" class="buy_number">
-                <span class="amount_btn">
-                    <img th:src="up.png" class="amount_value_up">
-                    <img th:src="down.png" class="amount_value-down">
-                </span>
-                        <button>
-                            <a>确定</a>
-                        </button>
-                        </form>
-                    </dd>
-                </dl>
-                加入购物车
-                <div class="addpurchase">
+                        <dd>
+                            <input type="button" class="decrease" value="-">
+                            <input type="text" name="buyNumber" value="1" class="quantity"/>
+                            <input type="button" class="increase" value="+">
+                            <button>
+                                <a>确定</a>
+                            </button>
+                        </dd>
+                    </form>
+                </div>
+                <div class="addPurchase">
                     <button type="button" class="add">
-                            <td>
-                                <a th:href="@{insertS(userId=1,gId=${goods.gId})}">加入购物车</a>
-                            </td>
+                        <td>
+                            <a th:href="@{insertS(userId=1,gId=${goods.gId})}">加入购物车</a>
+                        </td>
                     </button>
                     <button type="button" class="buy">
                         <a href="order">立即购买</a>
@@ -270,26 +74,5 @@
     </div>
 </div>
 </tr>
-
-<script>
-    var ele = document.getElementsByTagName("button")[0];
-    ele.onclick = function () {
-        swal({
-            title: "已确定",
-            type: "success",
-            confirmButtonText: "确定",
-            closeOnConfirm: false
-        });
-    }
-    var ele = document.getElementsByTagName("button")[1];
-    ele.onclick = function () {
-        swal({
-            title: "添加成功",
-            type: "success",
-            confirmButtonText: "确定",
-            closeOnConfirm: false
-        });
-    }
-</script>
 </body>
 </html>

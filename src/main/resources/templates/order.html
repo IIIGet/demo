@@ -7,232 +7,37 @@
     <meta name="Keywords" content="">
     <meta name="Description" content="">
     <title>下单</title>
-<!--    <link rel="stylesheet" type="text/css" th:href="/order.css"/>-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/order.css}"/>
 </head>
-<style>
-    * {
-        padding: 0;
-        margin: 0;
-    }
 
-    a {
-        text-decoration: none;
-        color: black;
-    }
-
-    p {
-        font-family: 楷体;
-    }
-
-    .wrapper {
-        top: -120px;
-        width: 1280px;
-        margin: 120px auto;
-        background-color: #DE7548;
-        position: relative;
-    }
-
-    .top {
-        margin-top: -10px;
-        width: 100%;
-        height: 50px;
-        background-color: #BB6566;
-        position: relative;
-        font-size: large;
-        font-family: 楷体;
-    }
-
-    .top li {
-        list-style: none;
-        float: left;
-        line-height: 50px;
-        margin: 5px;
-    }
-
-    .tf {
-        position: absolute;
-        width: 50%;
-        left: 50px;
-        flex: none;
-    }
-
-    .tr {
-        position: absolute;
-        width: 50%;
-        left: 950px;
-    }
-
-    .goods {
-        width: 100%;
-        height: 600px;
-        margin-top: 50px;
-        position: relative;
-        background-color: #D8D0D0;
-    }
-
-    .dd {
-        font-size: xx-large;
-    }
-
-    .wu {
-        width: 100%;
-    }
-
-    .wu li {
-        list-style: none;
-        margin: 105px;
-        margin-top: 40px;
-        float: left;
-    }
-
-    .infor {
-        width: 50%;
-        position: absolute;
-        top: 480px;
-    }
-
-    .ly {
-        width: 50%;
-        position: absolute;
-        top: 500px;
-    }
-
-    textarea {
-        width: 300px;
-        height: 78px;
-    }
-
-    .yh {
-        width: 50%;
-        position: absolute;
-        top: 500px;
-        left: 1000px;
-    }
-
-    .total {
-        position: absolute;
-        left: 1050px;
-        top: 550px;
-        font-family: 隶书;
-        font-size: xx-large;
-    }
-
-    .pay {
-        position: relative;
-    }
-
-    .return {
-        position: absolute;
-        left: 1050px;
-        text-align: center;
-        line-height: 50px;
-        font-size: larger;
-        top: 70px;
-    }
-
-    .return a {
-        color: green;
-    }
-
-    .person {
-        list-style: none;
-        position: absolute;
-        left: 1050px;
-        font-family: 隶书;
-        font-size: x-large;
-    }
-
-    .button{
-        width: 120px;
-        height: 50px;
-        position: absolute;
-        top: 70px;
-        right: 0px;
-        background-color: red;
-        float: right;
-        text-align: center;
-        line-height: 50px;
-        color: white;
-        font-size: larger;
-        font-family: 华文行楷;
-    }
-    .order a {
-        color: white;
-    }
-</style>
 <body>
 <tr th:each="gg : ${goods}">
-<div class="wrapper">
-    <div class="top">
-        <ul class="tf">
-            <li><a href="主页.html">小食の店首页</a></li>
-            <li><a href="#">hi,尊敬的顾客
-                <td th:text="${userName}">米奇</td>
-            </a></li>
-            <li><a href="#">退出</a></li>
-        </ul>
-        <ul class="tr">
-            <li><a href="#">购物车</a></li>
-            <li><a href="#">收藏夹</a></li>
-            <li><a href="#">会员服务</a></li>
-            <li><a href="#">商家支持</a></li>
-        </ul>
-    </div>
-    <div class="goods">
-        <p class="dd"><strong>确认订单信息</strong></p>
-        <ul class="wu">
-            <li>商品</li>
-            <li>单价</li>
-            <li>数量</li>
-<!--            <li>优惠方式</li>-->
-            <li>小计</li>
-        </ul>
-        <style>
-            .real {
-                position: relative;
-                width: 100%;
-            }
+    <div class="wrapper">
+        <div class="top">
+            <ul class="tf">
+                <li><a href="主页.html">小食の店首页</a></li>
+                <li><a href="#">hi,尊敬的顾客
+                    <td th:text="${userName}">米奇</td>
+                </a></li>
+                <li><a href="#">退出</a></li>
+            </ul>
+            <ul class="tr">
+                <li><a href="#">购物车</a></li>
+                <li><a href="#">收藏夹</a></li>
+                <li><a href="#">会员服务</a></li>
+                <li><a href="#">商家支持</a></li>
+            </ul>
+        </div>
+        <div class="goods">
+            <p class="dd"><strong>确认订单信息</strong></p>
+            <ul class="wu">
+                <li>商品</li>
+                <li>单价</li>
+                <li>数量</li>
+                <li>小计</li>
+            </ul>
 
-            .go {
-                position: absolute;
-                width: 10%;
-                left: 6.2%;
-                top: 100px;
-            }
-
-            .gtext {
-                position: absolute;
-                width: 10%;
-                left: 21%;
-                top: 100px;
-            }
-
-            .price {
-                position: absolute;
-                left: 39%;
-                top: 100px;
-            }
-
-            .numb {
-                position: absolute;
-                left: 55%;
-                top: 100px;
-            }
-
-            .youhui {
-                position: absolute;
-                left: 69%;
-                top: 100px;
-            }
-
-            .realpay {
-                position: absolute;
-                left: 86.5%;
-                top: 100px;
-            }
-        </style>
-
-        <div class="real">
+            <div class="real">
 
                 <div class="go">
                     <td th:text="${gg.gName}" name="gName">2020欧洲杯意大利主场球衣</td>
@@ -247,39 +52,39 @@
                 <div class="numb">
                     <td th:text="${gg.orderNum}" name="orderNum">1</td>
                 </div>
-<!--                <div class="youhui">-->
-<!--                    会员特价-->
-<!--                </div>-->
+
                 <div class="realpay">
                     <p>
                     <td th:text="${gg.gPrice * gg.orderNum}">419</td>
                     </p>
                 </div>
+            </div>
+            <form class="infor">
+                打印发票：
+                <input type="checkbox" name="打印发票" checked>
+                不打印发票：
+                <input type="checkbox" name="不打印发票">
+            </form>
+            <form class="ly">
+                <p>给卖家留言(选填，请先和商家协商一致)</p>
+                <textarea></textarea>
+            </form>
+            <p class="total">总 计：
+            <td th:text="${gg.gPrice * gg.orderNum}">419</td>
+            </p>
         </div>
-        <form class="infor">
-            打印发票：
-            <input type="checkbox" name="打印发票" checked>
-            不打印发票：
-            <input type="checkbox" name="不打印发票">
-        </form>
-        <form class="ly">
-            <p>给卖家留言(选填，请先和商家协商一致)</p>
-            <textarea></textarea>
-        </form>
-        <p class="total">总 计：<td th:text="${gg.gPrice * gg.orderNum}">419</td></p>
-    </div>
-    <div class="pay">
-        <p class="return"><a href="#">返回购物车</a></p>
-        <div class="order">
-                <button class="button">
+        <div class="pay">
+            <p class="return"><a href="#">返回购物车</a></p>
+            <div class="order">
+                <button class="gOrder">
                     <td>
                         <a th:href="@{done(userId=1,username='米奇',gId=${gg.gId},gName=${gg.gName}
-                       ,gPrice=${gg.gPrice},orderNum=${gg.orderNum})}" >提交订单</a>
+                       ,gPrice=${gg.gPrice},orderNum=${gg.orderNum})}">提交订单</a>
                     </td>
                 </button>
+            </div>
         </div>
     </div>
-</div>
 </tr>
 </body>
 </html>

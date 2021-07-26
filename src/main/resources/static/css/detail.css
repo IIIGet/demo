@@ -1,0 +1,166 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+p {
+    font-family: 楷体;
+}
+
+.wrapper {
+    top: -120px;
+    width: 1280px;
+    margin: 120px auto;
+    background-color: white;
+    position: relative;
+}
+
+.top {
+    margin-top: -10px;
+    width: 100%;
+    height: 50px;
+    background-color: #BB6566;
+    position: relative;
+    font-size: large;
+    font-family: 楷体;
+}
+
+.top li {
+    list-style: none;
+    float: left;
+    line-height: 50px;
+    margin: 5px;
+}
+
+.tf {
+    position: absolute;
+    width: 50%;
+    left: 50px;
+    flex: none;
+}
+
+.tr {
+    position: absolute;
+    width: 50%;
+    left: 950px;
+}
+
+.content {
+    position: relative;
+    background-color: #C68463;
+    width: 100%;
+    height: 600px;
+    margin-top: -50px;
+}
+
+.logo {
+    margin: 50px;
+    width: 31%;
+}
+
+.descr {
+    position: absolute;
+    left: 630px;
+    top: 0;
+    margin-top: 30px;
+}
+
+.descr p {
+    font-size: xx-large;
+    font-family: 宋体;
+}
+
+h3 {
+    border-bottom: 2px solid gainsboro;
+    font-size: xx-large;
+}
+
+.price {
+    margin-top: 5px;
+    width: 500px;
+    height: 80px;
+    border: gainsboro solid 1px;
+    background-color: gainsboro;
+}
+
+.add {
+    width: 220px;
+    height: 70px;
+    background-color: #F26A12;
+    font-size: xx-large;
+    font-family: 楷体;
+    position: absolute;
+    top: 500px;
+}
+
+.add a {
+    color: white;
+}
+
+.buy {
+    width: 220px;
+    height: 70px;
+    background-color: white;
+    font-size: xx-large;
+    font-family: 楷体;
+    position: absolute;
+    top: 500px;
+    left: 290px;
+}
+
+.buy a {
+    color: #F26A12;
+    border: oldlace;
+}
+
+.number_info {
+    margin-top: 65px;
+    margin-bottom: 12px;
+    margin-right: 20px;
+    padding: 10px 0;
+    position: relative;
+    width: 510px;
+}
+
+.number_info > dt {
+    font-weight: normal;
+    font-size: 16px;
+    text-align: left;
+    float: left;
+    width: 180px;
+    margin-left: 8px;
+    height: 31px;
+    line-height: 31px;
+}
+
+.number_info > dd {
+    height: 31px;
+    line-height: 31px;
+}
+
+.number_info > dd > input {
+    padding: 3px 2px 0 2px;
+    font-size: 12px;
+    font-family: Arial, serif;
+    border: 1px solid #a7a6ac;
+    width: 36px;
+    height: 26px;
+    color: #666;
+    display: inline-block;
+    float: left;
+    margin-right: 5px;
+    outline: none;
+}
+
+.increase {
+    width: 25px;
+}
+
+.decrease {
+    width: 25px;
+}
