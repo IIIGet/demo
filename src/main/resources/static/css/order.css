@@ -68,7 +68,7 @@ p {
 
 .wu li {
     list-style: none;
-    margin: 105px;
+    margin: 135px;
     margin-top: 40px;
     float: left;
 }
@@ -108,7 +108,6 @@ textarea {
     text-align: center;
     line-height: 50px;
     font-size: larger;
-    /*top: 70px;*/
 }
 
 .return a {
@@ -119,7 +118,6 @@ textarea {
     width: 120px;
     height: 50px;
     position: absolute;
-    /*top: 70px;*/
     right: 0px;
     background-color: red;
     float: right;
@@ -142,37 +140,24 @@ textarea {
 .go {
     position: absolute;
     width: 10%;
-    left: 6.2%;
-    top: 100px;
-}
-
-.gtext {
-    position: absolute;
-    width: 10%;
-    left: 21%;
+    left: 8.2%;
     top: 100px;
 }
 
 .price {
     position: absolute;
-    left: 39%;
+    left: 34%;
     top: 100px;
 }
 
 .numb {
     position: absolute;
-    left: 55%;
-    top: 100px;
-}
-
-.youhui {
-    position: absolute;
-    left: 69%;
+    left: 58%;
     top: 100px;
 }
 
 .realpay {
     position: absolute;
-    left: 86.5%;
+    left: 81.5%;
     top: 100px;
 }
