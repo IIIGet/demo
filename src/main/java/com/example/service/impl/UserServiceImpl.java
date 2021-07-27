@@ -9,7 +9,7 @@ import java.util.List;
 
 
 @Service
-public class UserServiceImpl implements UserService,UserMapper {
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userMapper;
@@ -43,4 +43,5 @@ public class UserServiceImpl implements UserService,UserMapper {
     public User loginIn(String username,String password) {
         return userMapper.loginIn(username,password);
     }
+
 }

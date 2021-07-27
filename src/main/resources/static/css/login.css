@@ -1,6 +1,6 @@
 
-/* æ¸…é™¤æµè§ˆå™¨é»˜è®¤è¾¹è·ï¼Œ
-ä½¿è¾¹æ¡†å’Œå†…è¾¹è·çš„å€¼åŒ…å«åœ¨å…ƒç´ çš„widthå’Œheightå†… */
+/* Çå³ıä¯ÀÀÆ÷Ä¬ÈÏ±ß¾à£¬
+Ê¹±ß¿òºÍÄÚ±ß¾àµÄÖµ°üº¬ÔÚÔªËØµÄwidthºÍheightÄÚ */
 
 * {
     margin: 0;
@@ -11,30 +11,30 @@ body{
     background-image: url(../IMG/kele.jpg);
 }
 
-/* ä½¿ç”¨flexå¸ƒå±€ï¼Œè®©å†…å®¹å‚ç›´å’Œæ°´å¹³å±…ä¸­ */
+/* Ê¹ÓÃflex²¼¾Ö£¬ÈÃÄÚÈİ´¹Ö±ºÍË®Æ½¾ÓÖĞ */
 
 section {
-    /* ç›¸å¯¹å®šä½ */
+    /* Ïà¶Ô¶¨Î» */
     position: relative;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    /* linear-gradient() å‡½æ•°ç”¨äºåˆ›å»ºä¸€ä¸ªè¡¨ç¤ºä¸¤ç§æˆ–å¤šç§é¢œè‰²çº¿æ€§æ¸å˜çš„å›¾ç‰‡ */
+    /* linear-gradient() º¯ÊıÓÃÓÚ´´½¨Ò»¸ö±íÊ¾Á½ÖÖ»ò¶àÖÖÑÕÉ«ÏßĞÔ½¥±äµÄÍ¼Æ¬ */
     /* background: linear-gradient(to bottom, #f1f4f9, #dff1ff); */
 }
 
-/* èƒŒæ™¯é¢œè‰² */
+/* ±³¾°ÑÕÉ« */
 
 section .color {
-    /* ç»å¯¹å®šä½ */
+    /* ¾ø¶Ô¶¨Î» */
     position: absolute;
-    /* ä½¿ç”¨filter(æ»¤é•œ) å±æ€§ï¼Œç»™å›¾åƒè®¾ç½®é«˜æ–¯æ¨¡ç³Š*/
+    /* Ê¹ÓÃfilter(ÂË¾µ) ÊôĞÔ£¬¸øÍ¼ÏñÉèÖÃ¸ßË¹Ä£ºı*/
     filter: blur(200px);
 }
 
-/* :nth-child(n) é€‰æ‹©å™¨åŒ¹é…çˆ¶å…ƒç´ ä¸­çš„ç¬¬ n ä¸ªå­å…ƒç´  */
+/* :nth-child(n) Ñ¡ÔñÆ÷Æ¥Åä¸¸ÔªËØÖĞµÄµÚ n ¸ö×ÓÔªËØ */
 
 section .color:nth-child(1) {
     top: -350px;
@@ -66,32 +66,32 @@ section .color:nth-child(3) {
     position: relative;
 }
 
-/* èƒŒæ™¯åœ†æ ·å¼ */
+/* ±³¾°Ô²ÑùÊ½ */
 
 .box .circle {
     position: absolute;
     background: rgba(255, 255, 255, 0.1);
-    /* backdrop-filterå±æ€§ä¸ºä¸€ä¸ªå…ƒç´ åé¢åŒºåŸŸæ·»åŠ æ¨¡ç³Šæ•ˆæœ */
+    /* backdrop-filterÊôĞÔÎªÒ»¸öÔªËØºóÃæÇøÓòÌí¼ÓÄ£ºıĞ§¹û */
     backdrop-filter: blur(5px);
     box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-right: 1px solid rgba(255, 255, 255, 0.2);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50%;
-    /* ä½¿ç”¨filter(æ»¤é•œ) å±æ€§ï¼Œæ”¹å˜é¢œè‰²ã€‚
-    hue-rotate(deg)  ç»™å›¾åƒåº”ç”¨è‰²ç›¸æ—‹è½¬
-    calc() å‡½æ•°ç”¨äºåŠ¨æ€è®¡ç®—é•¿åº¦å€¼
-    var() å‡½æ•°è°ƒç”¨è‡ªå®šä¹‰çš„CSSå±æ€§å€¼x*/
+    /* Ê¹ÓÃfilter(ÂË¾µ) ÊôĞÔ£¬¸Ä±äÑÕÉ«¡£
+    hue-rotate(deg)  ¸øÍ¼ÏñÓ¦ÓÃÉ«ÏàĞı×ª
+    calc() º¯ÊıÓÃÓÚ¶¯Ì¬¼ÆËã³¤¶ÈÖµ
+    var() º¯Êıµ÷ÓÃ×Ô¶¨ÒåµÄCSSÊôĞÔÖµx*/
     filter: hue-rotate(calc(var(--x) * 70deg));
-    /* è°ƒç”¨åŠ¨ç”»animateï¼Œéœ€è¦10så®ŒæˆåŠ¨ç”»ï¼Œ
-    linearè¡¨ç¤ºåŠ¨ç”»ä»å¤´åˆ°å°¾çš„é€Ÿåº¦æ˜¯ç›¸åŒçš„ï¼Œ
-    infiniteæŒ‡å®šåŠ¨ç”»åº”è¯¥å¾ªç¯æ’­æ”¾æ— é™æ¬¡*/
+    /* µ÷ÓÃ¶¯»­animate£¬ĞèÒª10sÍê³É¶¯»­£¬
+    linear±íÊ¾¶¯»­´ÓÍ·µ½Î²µÄËÙ¶ÈÊÇÏàÍ¬µÄ£¬
+    infiniteÖ¸¶¨¶¯»­Ó¦¸ÃÑ­»·²¥·ÅÎŞÏŞ´Î*/
     animation: animate 10s linear infinite;
-    /* åŠ¨æ€è®¡ç®—åŠ¨ç”»å»¶è¿Ÿå‡ ç§’æ’­æ”¾ */
+    /* ¶¯Ì¬¼ÆËã¶¯»­ÑÓ³Ù¼¸Ãë²¥·Å */
     animation-delay: calc(var(--x) * -1s);
 }
 
-/* èƒŒæ™¯åœ†åŠ¨ç”» */
+/* ±³¾°Ô²¶¯»­ */
 
 @keyframes animate {
     0%, 100% {
@@ -139,7 +139,7 @@ section .color:nth-child(3) {
     height: 60px;
 }
 
-/* ç™»å½•æ¡†æ ·å¼ */
+/* µÇÂ¼¿òÑùÊ½ */
 
 .container {
     position: relative;
@@ -159,11 +159,11 @@ section .color:nth-child(3) {
 .form {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 110%;
     padding: 50px;
 }
 
-/* ç™»å½•æ ‡é¢˜æ ·å¼ */
+/* µÇÂ¼±êÌâÑùÊ½ */
 
 #choose-pattern1 {
     position: relative;
@@ -193,7 +193,7 @@ section .color:nth-child(3) {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-/* ç™»å½•æ ‡é¢˜çš„ä¸‹åˆ’çº¿æ ·å¼ */
+/* µÇÂ¼±êÌâµÄÏÂ»®ÏßÑùÊ½ */
 
 /* .form h2::before {
     content: "";
@@ -215,7 +215,7 @@ section .color:nth-child(3) {
     margin-top: 20px;
 }
 
-/* è¾“å…¥æ¡†æ ·å¼ */
+/* ÊäÈë¿òÑùÊ½ */
 
 .form .inputBox input {
     width: 100%;
@@ -237,14 +237,14 @@ section .color:nth-child(3) {
     color: #fff;
 }
 
-#sjh{
+#gly{
     display: none;
 }
-#sjyzm{
+#glymm{
     display: none;
 }
 
-/* ç™»å½•æŒ‰é’®æ ·å¼ */
+/* µÇÂ¼°´Å¥ÑùÊ½ */
 .form .buttonBox {
     display:inline;
 }
@@ -296,6 +296,7 @@ section .color:nth-child(3) {
     display: table;
 }
 .inputBox .dlText{
+    width: 7.125rem;
     display: table-cell;
     user-select: none;
     color: #fff;
@@ -306,13 +307,20 @@ section .color:nth-child(3) {
 #yzmk{
     position: relative;
     top: .625rem;
-    left: 1.25rem;
+    right: -1.225rem;
 }
-p{
-    user-select: none;
-    font-size: 16px;
-    letter-spacing: 1px;
-    color: #fff;
-    position: relative;
-    right: .625rem;
+/*#yzmts{*/
+/*    user-select: none;*/
+/*    font-size: 16px;*/
+/*    letter-spacing: 1px;*/
+/*    color: #fff;*/
+/*    position: relative;*/
+/*    right: 2.625rem;*/
+/*}*/
+
+#choose-pattern1 :active{
+    background-color: rgb(104, 81, 81);
+}
+#choose-pattern2 :active{
+    background-color: rgb(104, 81, 81);
 }

@@ -1,8 +1,8 @@
 var yhm = document.getElementById("yhm");
 var yhmm = document.getElementById("yhmm");
 var yzm = document.getElementById("yzm");
-var sjh = document.getElementById("sjh");
-var sjyzm = document.getElementById("sjyzm");
+var gly = document.getElementById("gly");
+var glymm = document.getElementById("glymm");
 var inputBox = document.getElementsByClassName("inputBox");
 var dlText = document.getElementsByClassName("dlText");
 var shurukuang = document.getElementsByClassName("shurukuang");
@@ -21,22 +21,21 @@ function yhmdl(){
     console.log("yhmdl");
     yhm.style.display="table";
     yhmm.style.display="table";
-    yzm.style.display="table";
-    sjh.style.display="none";
-    sjyzm.style.display="none";
-
+    //yzm.style.display="table";
+    gly.style.display="none";
+    glymm.style.display="none";
 
 }
 
-function sjhdl(){
+function glydl(){
 
 
-    console.log("sjhdl");
+    console.log("glydl");
     yhm.style.display="none";
     yhmm.style.display="none";
-    yzm.style.display="none";
-    sjh.style.display="table";
-    sjyzm.style.display="table";
+    //yzm.style.display="none";
+    gly.style.display="table";
+    glymm.style.display="table";
 
 }
 
@@ -48,55 +47,55 @@ function sjhdl(){
 //          };
 
 
-//éªŒè¯ç 
+//ÑéÖ¤Âë
 
-//ç”Ÿæˆéšæœºæ•°
+//Éú³ÉËæ»úÊı
 function randomNum(min,max){
     return Math.floor(Math.random()*(max-min)+min);
 }
-//ç”Ÿæˆéšæœºé¢œè‰²RGBåˆ†é‡
+//Éú³ÉËæ»úÑÕÉ«RGB·ÖÁ¿
 function randomColor(min,max){
     var _r = randomNum(min,max);
     var _g = randomNum(min,max);
     var _b = randomNum(min,max);
     return "rgb("+_r+","+_g+","+_b+")";
 }
-//å…ˆé˜»æ­¢ç”»å¸ƒé»˜è®¤ç‚¹å‡»å‘ç”Ÿçš„è¡Œä¸ºå†æ‰§è¡ŒdrawPic()æ–¹æ³•
+//ÏÈ×èÖ¹»­²¼Ä¬ÈÏµã»÷·¢ÉúµÄĞĞÎªÔÙÖ´ĞĞdrawPic()·½·¨
 document.getElementById("canvas").onclick = function(e){
     e.preventDefault();
     scyzm();
 };
 function drawPic(){
-    //è·å–åˆ°å…ƒç´ canvas
+    //»ñÈ¡µ½ÔªËØcanvas
     var $canvas = document.getElementById("canvas");
-    var _str = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";//è®¾ç½®éšæœºæ•°åº“
-    var _picTxt = "";//éšæœºæ•°
-    var _num = 4;//4ä¸ªéšæœºæ•°å­—
+    var _str = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";//ÉèÖÃËæ»úÊı¿â
+    var _picTxt = "";//Ëæ»úÊı
+    var _num = 4;//4¸öËæ»úÊı×Ö
     var _width = $canvas.width;
     var _height = $canvas.height;
-    var ctx = $canvas.getContext("2d");//è·å– context å¯¹è±¡
-    ctx.textBaseline = "bottom";//æ–‡å­—ä¸Šä¸‹å¯¹é½æ–¹å¼--åº•éƒ¨å¯¹é½
-    ctx.fillStyle = randomColor(180,240);//å¡«å……ç”»å¸ƒé¢œè‰²
-    ctx.fillRect(0,0,_width,_height);//å¡«å……çŸ©å½¢--ç”»ç”»
+    var ctx = $canvas.getContext("2d");//»ñÈ¡ context ¶ÔÏó
+    ctx.textBaseline = "bottom";//ÎÄ×ÖÉÏÏÂ¶ÔÆë·½Ê½--µ×²¿¶ÔÆë
+    ctx.fillStyle = randomColor(180,240);//Ìî³ä»­²¼ÑÕÉ«
+    ctx.fillRect(0,0,_width,_height);//Ìî³ä¾ØĞÎ--»­»­
     for(var i=0; i<_num; i++){
         var x = (_width-10)/_num*i+10;
         var y = randomNum(_height/2,_height);
         var deg = randomNum(-45,45);
         var txt = _str[randomNum(0,_str.length)];
-        _picTxt += txt;//è·å–ä¸€ä¸ªéšæœºæ•°
-        ctx.fillStyle = randomColor(10,100);//å¡«å……éšæœºé¢œè‰²
-        ctx.font = randomNum(16,40)+"px SimHei";//è®¾ç½®éšæœºæ•°å¤§å°ï¼Œå­—ä½“ä¸ºSimHei
-        ctx.translate(x,y);//å°†å½“å‰xyåæ ‡ä½œä¸ºåŸå§‹åæ ‡
-        ctx.rotate(deg*Math.PI/180);//æ—‹è½¬éšæœºè§’åº¦
-        ctx.fillText(txt, 0,0);//ç»˜åˆ¶å¡«è‰²çš„æ–‡æœ¬
+        _picTxt += txt;//»ñÈ¡Ò»¸öËæ»úÊı
+        ctx.fillStyle = randomColor(10,100);//Ìî³äËæ»úÑÕÉ«
+        ctx.font = randomNum(16,40)+"px SimHei";//ÉèÖÃËæ»úÊı´óĞ¡£¬×ÖÌåÎªSimHei
+        ctx.translate(x,y);//½«µ±Ç°xy×ø±ê×÷ÎªÔ­Ê¼×ø±ê
+        ctx.rotate(deg*Math.PI/180);//Ğı×ªËæ»ú½Ç¶È
+        ctx.fillText(txt, 0,0);//»æÖÆÌîÉ«µÄÎÄ±¾
         ctx.rotate(-deg*Math.PI/180);
         ctx.translate(-x,-y);
     }
     for(var i=0; i<_num; i++){
-        //å®šä¹‰ç¬”è§¦é¢œè‰²
+        //¶¨Òå±Ê´¥ÑÕÉ«
         ctx.strokeStyle = randomColor(90,180);
         ctx.beginPath();
-        //éšæœºåˆ’çº¿--4æ¡è·¯å¾„
+        //Ëæ»ú»®Ïß--4ÌõÂ·¾¶
         ctx.moveTo(randomNum(0,_width), randomNum(0,_height));
         ctx.lineTo(randomNum(0,_width), randomNum(0,_height));
         ctx.stroke();
@@ -104,11 +103,11 @@ function drawPic(){
     for(var i=0; i<_num*10; i++){
         ctx.fillStyle = randomColor(0,255);
         ctx.beginPath();
-        //éšæœºç”»åŸï¼Œå¡«å……é¢œè‰²
+        //Ëæ»ú»­Ô­£¬Ìî³äÑÕÉ«
         ctx.arc(randomNum(0,_width),randomNum(0,_height), 1, 0, 2*Math.PI);
         ctx.fill();
     }
-    return _picTxt;//è¿”å›éšæœºæ•°å­—ç¬¦ä¸²
+    return _picTxt;//·µ»ØËæ»úÊı×Ö·û´®
 }
 scyzm();
 //window.setInterval(aaa(),10000);
@@ -125,7 +124,7 @@ function denglu(){
     if(shengchengyanzhengma1 == shuruyanzhengma1){
         return true;
     }else{
-        alert("éªŒè¯ç é”™è¯¯ï¼")
+        alert("ÑéÖ¤Âë´íÎó£¡")
         return false;
     }
 }

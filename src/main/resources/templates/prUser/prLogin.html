@@ -28,12 +28,12 @@
         <div class="container" id="div1">
             <div class="form">
                 <div class="choose-pattern" id="choose-pattern1">
-                    <input id="用户名登录" type="button" value="用户名登录" onclick="yhmdl()">
+                    <input id="用户登录" type="button" value="用户名登录" onclick="yhmdl()">
                 </div>
                 <div class="choose-pattern" id="choose-pattern2">
-                    <input id="手机号登录" type="button" value="手机号登录" onclick="sjhdl()">
+                    <input id="管理员登录" type="button" value="管理员登录" onclick="glydl()">
                 </div>
-                <form action="/loginIn">
+                <form action="/userLogin/loginIn">
                     <div class="inputBox" id="yhm">
                         <div class="dlText">用户名：</div>
                         <input type="text" placeholder="请输入用户名" class="shurukuang" id="username" name = "username">
@@ -42,23 +42,25 @@
                         <div class="dlText">密&nbsp&nbsp&nbsp码：</div>
                         <input type="password" placeholder="请输入密码" class="shurukuang" id = "password" name = "password">
                     </div>
+
+                    <div class="inputBox" id="gly">
+                        <div class="dlText">管理员账号：</div>
+                        <input type="text"  placeholder="请输入管理员账号" class="shurukuang" name="pr_username" id="pr_username">
+                    </div>
+                    <div class="inputBox" id="glymm">
+                        <div class="dlText">管理员密码：</div>
+                        <input type="password"  placeholder="请输入管理员密码" class="shurukuang" name="pr_password" id="pr_password">
+                    </div>
                     <div class="inputBox" id="yzm">
                         <div class="dlText">验证码：</div>
-                        <input type="text" placeholder="请输入验证码" class="shurukuang" id="shuruyanzhengma">
+                        <input type="text" placeholder="请输入下图验证码" class="shurukuang" id="shuruyanzhengma">
                         <br>
                         <div class="showtext" id="yzmk">
                             <canvas id="canvas" width="150px" height="50px"></canvas>
-                            <p>点击图片可更换验证码数字</p>
+
                         </div>
                     </div>
-                    <div class="inputBox" id="sjh">
-                        <div class="dlText">手机号：</div>
-                        <input type="text"  placeholder="请输入手机号" class="shurukuang">
-                    </div>
-                    <div class="inputBox" id="sjyzm">
-                        <div class="dlText">验证码：</div>
-                        <input type="password"  placeholder="请输入手机验证码" class="shurukuang">
-                    </div>
+
                     <div class="inputBox buttonBox">
                         <input type="submit" value="登录" id = "login" onclick="return denglu()">
                     </div>
@@ -68,7 +70,7 @@
                     <p class="forget">忘记密码?<a href="forget.html">
                         立刻找回
                     </a></p>
-                    <p class="forget">没有账号?<a href="register.html">
+                    <p class="forget">没有账号?<a href="../register.html">
                         注册用户
                     </a></p>
                 </form>

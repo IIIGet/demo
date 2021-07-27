@@ -6,6 +6,6 @@
 </head>
 <body th:action="@{/edit}" th:model="*{user}">
     <p th:text="*{user.userid}"></p>
-    <a href="/userList" th:href="@{/userList(userid=${user.userid})}" class="btn btn-info">userList</a>
+    <a href="/userList" th:href="@{/userLogin/userList(userid=${user.userid})}" class="btn btn-info">userList</a>
 </body>
 </html>

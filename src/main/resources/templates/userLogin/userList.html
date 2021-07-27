@@ -41,8 +41,8 @@
             <td th:text="${user.identity}"></td>
             <td th:text="${user.status}"></td>
             <td th:text="${user.createTime}"></td>
-            <td><a th:href="@{/toEdit(userid=${user.userid})}">编辑</a></td>
-            <td><a th:href="@{/delete(userid=${user.userid})}">删除</a></td>
+            <td><a th:href="@{/userLogin/toEdit(userid=${user.userid})}">编辑</a></td>
+            <td><a th:href="@{/userLogin/delete(userid=${user.userid})}">删除</a></td>
         </tr>
 
         </tbody>
@@ -50,7 +50,7 @@
 </div>
 <div class="form-group">
     <div class="col-sm-2 control-label">
-        <a href="/toAdd" th:href="@{/toAdd}" class="btn btn-info">增加</a>
+        <a href="/toAdd" th:href="@{/userLogin/toAdd}" class="btn btn-info">增加</a>
     </div>
 </div>
 

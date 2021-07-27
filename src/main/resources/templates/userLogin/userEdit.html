@@ -10,7 +10,7 @@
 <h1>修改用户</h1>
 <br/><br/>
 <div class="with:80%">
-    <form  class="form-horizontal" th:action="@{/edit}" th:model="*{user}" method="post">
+    <form  class="form-horizontal" th:action="@{/userLogin/edit}" th:model="*{user}" method="post">
 <input type="hidden" name="userid" id="userid" th:value="*{user.userid}"/>  <!--type="hidden"-->
         <div class="form-group">
             <label for="username" class="col-sm-2 control-label">用户名</label>

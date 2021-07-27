@@ -28,15 +28,25 @@ public class loginFilter implements Filter {
         HttpSession session = request1.getSession();
         String path = request1.getRequestURI();
         Integer userid =(Integer) session.getAttribute("userid");
-        if (userid!=null || "".equals(userid) || path.indexOf("login")!=-1 || path.equals("/")){
-            //避免空指针;实现登录界面不过滤
-            System.out.println("已登录/已在登录界面");
-            System.out.println("已登录的"+session.getAttribute("userid"));
+        Integer pr_userid =(Integer) session.getAttribute("pr_userid");
+
+        if (path.indexOf("login")!=-1 || path.equals("/")){
+            //实现登录界面不过滤
+            System.out.println("已在登录界面");
             chain.doFilter(request, response);
-        }else{
+        }
+        else if (userid!=null && !("".equals(userid)) ){
+            //避免空指针
+            System.out.println("已登录的用户id"+session.getAttribute("userid"));
+            chain.doFilter(request, response);
+        }else if ( (pr_userid!=null && !("".equals(pr_userid)))){
+            System.out.println("已登录的管理员id"+session.getAttribute("pr_userid"));
+            chain.doFilter(request, response);
+        }
+        else{
             System.out.println("未登录");
             HttpServletResponse response1=(HttpServletResponse)response;
-            response1.sendRedirect("login");
+            response1.sendRedirect("userLogin/login");
         }
     }
 }
