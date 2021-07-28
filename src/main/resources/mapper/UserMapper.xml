@@ -14,7 +14,7 @@
         <result column="createTime" jdbcType="TIMESTAMP" property="createTime"/>
     </resultMap>
     <resultMap id="prResultMap" type="com.example.entity.Pr_User">
-        <id column="pr_id" jdbcType="INTEGER" property="pr_id"/>
+        <id column="pr_id" jdbcType="INTEGER" property="pr_userid"/>
         <id column="pr_username" jdbcType="VARCHAR" property="pr_username"/>
         <id column="pr_password" jdbcType="VARCHAR" property="pr_password"/>
         <id column="pr_realName" jdbcType="VARCHAR" property="pr_realName"/>
@@ -79,6 +79,8 @@
         where userid = #{userid,jdbcType=INTEGER}
     </update>
 
+
+
     <!-- 根据id查找User信息 -->
     <select id="findUserById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         select
@@ -99,5 +101,15 @@
         SELECT <include refid="pr_column_list" />
         FROM pr_users
         WHERE pr_username = #{pr_username,jdbcType=VARCHAR} AND pr_password = #{pr_password,jdbcType=VARCHAR}
+    </select>
+    <select id="getUserByEmail" parameterType="java.lang.String" resultType="com.example.entity.User">
+        select *
+        from users u
+        where u.email = #{email}
+    </select>
+    <select id="findUserByEmail" resultType="com.example.entity.User">
+        select *
+        from users
+        where email = #{myEmail}
     </select>
 </mapper>

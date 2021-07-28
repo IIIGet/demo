@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <link rel="stylesheet" href="/css/forgetUser.css">
+    <title>忘记密码</title>
+
+</head>
+<body>
+<!-- 没有语义标签 -->
+<div class="wrapper">
+    <div class="header">
+        <p>小食の店<strong>|</strong>修改密码 </p>
+    </div>
+    <div class="main">
+        <div class="box1">
+            <p2>
+                <form action="forgetUserIn" method="POST">
+                    <table align="center">
+                        <tr>
+                            <td align="right"> 我的邮箱：</td>
+                            <td>
+                                <input type="email" name="myEmail">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="submit" value="提交">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><td><input type="reset" value="清空"></td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <a href="login.html">返回登录</a>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                </form>
+            </p2>
+        </div>
+
+    </div>
+    <div class="footer">
+        <p1>仅支持支付宝 <strong>|</strong> 联系我们</p1>
+    </div>
+</div>
+</body>
+</html>

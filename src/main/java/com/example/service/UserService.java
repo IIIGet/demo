@@ -1,8 +1,8 @@
 package com.example.service;
 
 import com.example.entity.User;
-import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 
@@ -19,4 +19,6 @@ public interface UserService {
     int updateUser(User user);
 
     User loginIn(String username,String password);
+
+    User findUserByEmail(String email);
 }

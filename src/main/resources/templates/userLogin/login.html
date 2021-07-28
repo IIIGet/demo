@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -67,10 +67,10 @@
                     <div class="inputBox buttonBox">
                         <input type="reset" value="清空">
                     </div>
-                    <p class="forget">忘记密码?<a href="forget.html">
+                    <p class="forget">忘记密码?<a th:href="@{/forget/forgetUser}">
                         立刻找回
                     </a></p>
-                    <p class="forget">没有账号?<a href="../register.html">
+                    <p class="forget">没有账号?<a th:href="@{/register/registerUser}">
                         注册用户
                     </a></p>
                 </form>

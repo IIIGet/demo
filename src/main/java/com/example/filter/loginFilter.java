@@ -30,7 +30,7 @@ public class loginFilter implements Filter {
         Integer userid =(Integer) session.getAttribute("userid");
         Integer pr_userid =(Integer) session.getAttribute("pr_userid");
 
-        if (path.indexOf("login")!=-1 || path.equals("/")){
+        if (path.indexOf("login")!=-1 || path.equals("/") || path.indexOf("forget")!=-1 || path.indexOf("register")!=-1){
             //实现登录界面不过滤
             System.out.println("已在登录界面");
             chain.doFilter(request, response);

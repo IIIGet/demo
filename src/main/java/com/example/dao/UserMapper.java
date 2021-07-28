@@ -53,6 +53,15 @@ public interface UserMapper {
      * @return
      */
     User loginIn(String username,String password);
+
+
+    /**
+     * 根据email找用户
+     *
+     * @param email
+     * @return
+     */
+    User findUserByEmail(String email);
 }
 
 

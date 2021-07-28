@@ -1,0 +1,109 @@
+/* 父容器的定位通常是relative，子元素是absolute */
+
+/* 清除默认样式 */
+*{
+    padding:0;
+    margin: 0;
+}
+p{
+    font-size: 35px;
+    font-family:华文新魏;
+    color: #C68463;
+    padding: 20px 200px;
+}
+p1{
+    font-size: 10px;
+    font-family:宋体;
+    color: #D8D0D0;
+    padding: 30px 650px;
+}
+p2 input{
+    width:300px;
+    height: 30px;
+    color: #000000;
+    margin: 10px;
+}
+
+p3{
+    font-size: 40px;
+    font-family:隶书;
+    color: #C68463;
+
+}
+
+.box1{
+    opacity:0.8;
+    width:70%;
+    height: 76%;
+    background-color:#FDEFE4;
+    padding-left: 450px;
+    padding-top: 150px;
+
+    border:3px solid #D8D0D0;
+
+}
+.box2{
+    width:1200px;
+    height: 300px;
+    background-color:#FDEFE4;
+    padding-left: 0px;
+    padding-top: 110px;
+    padding-right: 10px;
+    border:3px solid #D8D0D0;
+}
+.box3{
+    width:1200px;
+    height: 100px;
+    background-color:#FDEFE4;
+    padding-left: 0px;
+    padding-top: 0px;
+    padding-right: 10px;
+    border:3px solid #D8D0D0;
+}
+
+.outer > li{ /* 直接子元素 */
+    list-style: none;
+    height: 35px;
+    width: 100%;
+    text-align: center;/* 水平居中 */
+    line-height: 50px;
+    font-size: 35px;
+    font-family:隶书;
+    color: #C68463;
+}
+a{
+    text-decoration:none;
+    color: #9C453B;
+}
+.wrapper{
+    width:100%;
+    height:800px;
+}
+.header{
+    width:100%;
+    height:80px;
+    background-color: #9C453B;
+}
+.main{
+    width: 100%;
+    height:640px;
+    position: relative;
+}
+.content{
+    width: 100%;
+    height: 100%;
+    background-color: #7F3B3F;
+    position: absolute;
+    top: 0px;
+    left: 10%;
+
+}
+body{
+    background:url(xigua.jpg) top left;
+    background-size:100%;
+}
+.footer{
+    width: 100%;
+    height: 80px;
+    background-color:#BB6566;
+}
