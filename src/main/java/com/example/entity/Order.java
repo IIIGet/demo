@@ -10,9 +10,8 @@ public class Order {
     private float gPrice;
     private float gPriceNow;
     private int orderNum;
+    private int orderId;
     private Timestamp orderTime;
-    private String address1;
-    private String phonenumber;
 
     public int getUserid() {
         return userid;
@@ -70,20 +69,12 @@ public class Order {
         this.username = username;
     }
 
-    public String getAddress1() {
-        return address1;
+    public int getOrderId() {
+        return orderId;
     }
 
-    public void setAddress1(String address1) {
-        this.address1 = address1;
-    }
-
-    public String getPhonenumber() {
-        return phonenumber;
-    }
-
-    public void setPhonenumber(String phonenumber) {
-        this.phonenumber = phonenumber;
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
     }
 
     public float getgPriceNow() {

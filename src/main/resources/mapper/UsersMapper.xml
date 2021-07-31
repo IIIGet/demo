@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.UsersMapper">
+    <resultMap id="UsersMap" type="com.example.entity.Users">
+
+        <result column="phonenumber"  property="phonenumber" />
+        <result column="address1" property="address1" />
+
+    </resultMap>
+
+    <sql id="SelectUsers">
+
+    </sql>
+
+    <!-- 查询所有数据 -->
+    <select id="findusers" resultMap="UsersMap">
+        SELECT  phonenumber,address1 FROM  users WHERE userid="1"
+    </select>
+
+</mapper>
