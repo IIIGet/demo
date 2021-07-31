@@ -1,6 +1,5 @@
 package com.example.service.impl;
 
-
 import com.example.dao.DetailMapper;
 import com.example.entity.Detail;
 import com.example.service.DetailService;

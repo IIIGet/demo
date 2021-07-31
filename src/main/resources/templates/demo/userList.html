@@ -165,10 +165,10 @@
                     <p3>
                         <tr th:each="order : *{order}"><!--循环语句，条件为users列表长度-->
                             <from th:action="@{/topaysucessful}" method="POST">
-                                orderId:<input th:value="1" name="orderId" id="orderId" class="myttpp">
-                                <input th:value="*{order.gName}" name="gName" id="gName" class="myttpp">
-                                <input th:value="*{order.orderNum}" name="orderNum" id="orderNum" class="mytt">件
-                                <input th:value="*{order.orderNum*order.gPrice}" name="total" id="toatl" class="myttpp">元
+                                orderId:<input disabled="disabled" th:value="1" name="orderId" id="orderId" class="myttpp">
+                                <input disabled="disabled" th:value="*{order.gName}" name="gName" id="gName" class="myttpp">
+                                <input disabled="disabled" th:value="*{order.orderNum}" name="orderNum" id="orderNum" class="mytt">件
+                                <input disabled="disabled" th:value="*{order.orderNum*order.gPrice}" name="total" id="toatl" class="myttpp">元
                             </from>
 
                     </tr>请即时付款</p3>
